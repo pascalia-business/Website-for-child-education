@@ -24,7 +24,15 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#benefits">Benefits</a></li>
           <li><a href="#contact">Contact</a></li>
-          <button class="language-btn">Language</button>
+          <div>
+                  <!-- Language Button -->
+              <button class="language-btn" onclick="toggleDropdown()"><strong>Language</strong></button>
+
+              <!-- Dropdown (Google Translate) -->
+              <div id="languageDropdown" class="language-dropdown">
+                  <div id="google_translate_element"></div>
+              </div>
+          </div>
         </ul>
       </nav>
       
@@ -198,38 +206,129 @@
 
 </section>
 
-<!--
 
+<!--Our Clients section-->
 
-How It Works Section 
-<section class="py-16 px-6">
-    <h3 class="text-center text-2xl font-bold mb-6">How It Works</h3>
-    <p class="text-center text-sm">Description and steps on how the virtual simulation works can go here.</p>
+<section class="client-stories">
+  <h2>Our <span>Clients</span> Stories</h2>
+  <div class="stories-container">
+      <div class="story">
+          <img src="images/teacher.jpg" alt="Parent Testimonial">
+          <p>"The interactive puzzles have sharpened my child’s focus and problem-solving skills. It’s amazing to see their progress!"</p>
+          <h4>— Sarah T., Parent</h4>
+      </div>
+      <div class="story">
+        <img src="images/Educator.jpg" alt="Parent Testimonial">
+          <p>"My daughter loved the stories in the simulation, and it helped her understand empathy and teamwork."</p>
+          <h4>James B., Educator</h4>
+      </div>
+      <div class="story">
+        <img src="images/parent2.jpg" alt="Parent Testimonial">
+          <p>"These simulations are perfect — they keep my son entertained while building essential skills in a secure environment."</p>
+          <h4>Clara M., Parent</h4>
+      </div>
+  </div>
 </section>
 
- Contact Section 
-<section id="contact" class="py-16 px-6 bg-gray-100">
-    <h3 class="text-center text-2xl font-bold mb-6">Get Involved</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-            <h4 class="font-bold">Let's Chat</h4>
-            <p>Give us feedback or test beta versions of our system.</p>
-        </div>
-        <form class="bg-white shadow-md p-6 rounded-lg">
-            <input type="email" placeholder="Email" class="border p-2 rounded-lg w-full mb-4">
-            <input type="text" placeholder="Name" class="border p-2 rounded-lg w-full mb-4">
-            <textarea placeholder="Message" class="border p-2 rounded-lg w-full mb-4"></textarea>
-            <button class="bg-blue-500 text-white py-2 px-4 rounded-lg">Send</button>
+<!-- How it works section-->
+
+
+<section class="how-it-works">
+  <h2 class="how-it-works-h2">How It Works</h2>
+  <div class="video-container">
+      <!-- Replace 'your-video.mp4' with your actual video file -->
+      <video controls>
+          <source  src="videos/Matching & Logic Games for Kids _ Developing Logic Skills for Preschool _ Kids Academy.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</section>
+
+<!--contact section -->
+
+<section class="contact-section">
+  <div>
+    <h2 class="contact-section-h2">Contact</h2>
+    <div class="contact-section-boxes">
+      <div>
+        <p><strong>Let's Chat</strong></p>
+        <p class="contact-section-p">Give us feedback on how to improve our system <br> or participate in beta testing.</p>
+      </div>
+
+      <div class="contact-form">
+        <form action="send_email.php" method="POST">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <label for="send"><button type="submit">SEND</button></label>
         </form>
-    </div>
+      </div>
+  </div>
+  </div>
 </section>
 
- Footer 
-<footer class="bg-gray-800 text-white py-6 text-center">
-    <p>&copy; 2025 All Rights Reserved. Child Virtual School</p>
+ 
+<!--footer section -->
+<footer class="footer">
+  <div class="footer-section">
+    <h3>Quick links</h3>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Start Now</a></li>
+      <li><a href="#">Play Demo</a></li>
+      <li><a href="#">Parents/Educator</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h4 class="footer-section-h4">Contact Information</h4>
+ 
+    <div class="footer-section contact-info">
+        <p><strong>Email:</strong> example@example.com</p>
+        <p><strong>Phone No.:</strong> 123-456-7890</p>
+        <p><strong>Address:</strong> 123 Example St, City, Country</p>
+    </div>  
+  </div>
+
+
+  <div class="footer-section-social-media">
+    <img src="images/Virtual-removebg-preview.png" class="footer_logo" alt="child virtual logo">
+    <p class="footer-section-social-media-P">Let's Chat on social media</p>
+    <div class="social-icons">
+      <a href="#"><img src="images/tiktok.png" alt="tiktok"></a>
+      <a href="#"><img src="images/youtube_3938026.png" alt="facebook"></a>
+      <a href="#"><img src="images/ig.jpg" alt="instagram"></a>
+    </div>
+  </div>
 </footer>
 
+<div class="copyright">
+  © Copyright All Rights Reserved 2025 Child Virtual School
+</div>
+ 
+<!-- Google Translate API -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+          { pageLanguage: 'en', includedLanguages: 'fr,es,de' },
+          'google_translate_element'
+      );
+  }
 
-  <script src="script.js"></script>-->
+  function toggleDropdown() {
+      document.getElementById("languageDropdown").classList.toggle("active");
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
